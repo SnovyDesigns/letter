@@ -8,11 +8,19 @@
 
   &__logo {
     @include ja-self(center);
+
+    #logo {
+      @include trans(0.5, $easing: ease-out);
+    }
+
+    &:hover #logo {
+      transform: perspective(400px) translate3d(-1rem, 0, -1rem) scale(0.93);
+    }
   }
 
   &__letter {
     font-size: $font-size-logo;
-    color: $color-logo;
+    color: $color-brown;
     margin-left: 1rem;
   }
 
@@ -29,6 +37,23 @@
 
   &__nav-link {
     color: $color-black;
+
+    &::after {
+      content: '';
+      display: block;
+      @include size(100%, 3px);
+      background: $color-brown;
+      visibility: hidden;
+      transform-origin: left;
+      transform: scale(0);
+      @include trans($easing: ease-out);
+    }
+
+    &:focus::after,
+    &:hover::after {
+      visibility: visible;
+      transform: scale(1);
+    }
 
     &--styled {
       color: $color-primary-styled;

@@ -19,8 +19,7 @@
   }
 
   #waves,
-  &__lamp,
-  &__cta {
+  &__lamp {
     @include ja-self(end);
   }
 
@@ -40,6 +39,7 @@
   &__cta {
     grid-area: title;
     margin-bottom: 2rem;
+    @include ja-self(end, center);
   }
 
   &__sun,

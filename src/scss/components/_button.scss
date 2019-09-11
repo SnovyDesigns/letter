@@ -6,6 +6,13 @@
   font-weight: $font-weight-bold;
   text-align: center;
   cursor: pointer;
+  @include trans(0.8, $easing: cubic-bezier(0.2, 0.8, 0.2, 1));
+
+  &:focus,
+  &:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+  }
 
   &--dark {
     background-color: $color-dark;
