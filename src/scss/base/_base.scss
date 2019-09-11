@@ -18,6 +18,8 @@ html {
 
 body {
   box-sizing: border-box;
+  // background: linear-gradient(to left, $color-1, $color-2);
+  overflow-x: hidden;
 }
 
 ul {
@@ -29,12 +31,16 @@ a {
 }
 
 img {
-  max-width: 100%;
   display: block;
-  object-fit: cover;
 }
 
 ::selection {
   background-color: blue;
   color: white;
+}
+
+.container {
+  max-width: $container-width;
+  background: linear-gradient(to left, $color-primary-light, $color-primary);
+  margin: 0 auto;
 }

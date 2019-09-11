@@ -3,6 +3,7 @@
 // ---------------------
 
 @import 'abstracts/variables';
+@import 'abstracts/extends';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/media-queries-mixins';
@@ -22,7 +23,7 @@
 //     COMPONENTS
 // ---------------------
 
-// @import 'components';
+@import 'components/button';
 
 // ----------------------------------------------
 
@@ -30,7 +31,7 @@
 //     LAYOUT
 // ---------------------
 
-// @import 'layout';
+@import 'layout/header';
 
 // ----------------------------------------------
 

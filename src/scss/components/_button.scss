@@ -1,0 +1,19 @@
+.btn {
+  font-size: $font-size-medium;
+  padding: 1rem 3rem;
+  border: none;
+  @include brr(0.5);
+  font-weight: $font-weight-bold;
+  text-align: center;
+  cursor: pointer;
+
+  &--dark {
+    background-color: $color-dark;
+    box-shadow: 0px 5px 10px rgba(255, 163, 148, 0.1);
+    color: $color-white;
+  }
+
+  &--cta {
+    @include absolute(bottom -2.3rem);
+  }
+}

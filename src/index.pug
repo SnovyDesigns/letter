@@ -1,3 +1,8 @@
+//- PUG INCLUDES
+include ./includes/main
+
+//- -----------------------------------
+
 doctype html
 html(lang="en")
   head
@@ -6,3 +11,29 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Letter
     meta(name="description", content="")
+  body
+    .container
+      header.header
+        .header__logo
+          +svg-logo
+          span.header__letter Letter
+        nav
+          ul.header__nav-list
+            - const navLinks = ['Plugins', 'Pricing', 'Log in', 'Free Trial'];
+            for item, index in navLinks
+              li.header__nav-item
+                a.header__nav-link(class=`${(index+1) === navLinks.length ? "header__nav-link--styled" : "" }`,href="#")= item
+      
+      .container
+        .hero
+          .hero__container
+            +svg-waves
+            img(src=require("./img/lamp.png")).hero__lamp
+            .hero__cta
+              h2.heading-primary Email for Designers
+              p.paragraph Dynamic email tool for creators that doesn't cost a leg. Works with Sketch, Figma and XD. Easily import your content and send with your favorite API.
+              button.btn.btn--dark.btn--cta Start Free Trial
+            .hero__sun
+              img(src=require("./img/sun.png")).sun
+            +svg-planes
+

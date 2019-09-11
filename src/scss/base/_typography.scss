@@ -1,2 +1,23 @@
+// BASE FONT IMPORT
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,700&display=swap');
+
+// ----------------------------------------------
+
 body {
+  font-family: 'Alegreya', serif;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+}
+
+.heading-primary {
+  font-size: $font-size-heading-primary;
+  line-height: 0.87;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1em;
+}
+
+.paragraph {
+  font-size: $font-size-medium;
+  color: $color-dark;
+  margin-bottom: 2rem;
 }

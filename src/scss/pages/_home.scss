@@ -1,0 +1,64 @@
+// Hero section
+.hero {
+  &__container {
+    position: relative;
+    @include min-h(55);
+    display: grid;
+
+    grid-template: repeat(2, minmax(0px, auto)) / repeat(4, 1fr);
+    grid-template-areas:
+      'lamp title sun sun'
+      'lamp title sun sun';
+    border-bottom: 1px solid $color-primary-dark;
+  }
+
+  #wave1,
+  #wave3,
+  #wave5 {
+    opacity: 0.8;
+  }
+
+  #waves,
+  &__lamp,
+  &__cta {
+    @include ja-self(end);
+  }
+
+  #waves {
+    @include max-w($container-width);
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  &__lamp {
+    grid-area: lamp;
+    height: auto;
+    @include absolute(bottom -30rem);
+  }
+
+  &__cta {
+    grid-area: title;
+    margin-bottom: 2rem;
+  }
+
+  &__sun,
+  #planes {
+    @include ja-self(start, end);
+  }
+
+  &__sun {
+    grid-area: sun;
+
+    img {
+      @include min-w(20);
+      @include max-w(40);
+      width: 100%;
+    }
+  }
+
+  #planes {
+    width: 100%;
+    grid-area: sun;
+  }
+}
