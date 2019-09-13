@@ -9,15 +9,24 @@ body {
   font-size: $font-size-base;
 }
 
+.heading-primary,
+.heading-secondary {
+  font-weight: $font-weight-bold;
+  margin: 0;
+  line-height: $line-height-heading;
+}
+
 .heading-primary {
   font-size: $font-size-heading-primary;
-  line-height: 0.87;
-  font-weight: $font-weight-bold;
-  margin-bottom: 1em;
+}
+
+.heading-secondary {
+  font-size: $font-size-heading-tertiary;
 }
 
 .paragraph {
   font-size: $font-size-medium;
   color: $color-dark;
-  margin-bottom: 2rem;
+  margin-top: 5rem;
+  line-height: $line-height-paragraph;
 }

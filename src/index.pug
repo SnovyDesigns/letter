@@ -24,16 +24,36 @@ html(lang="en")
               li.header__nav-item
                 a.header__nav-link(class=`${(index+1) === navLinks.length ? "header__nav-link--styled" : "" }`,href="#")= item
       
-      .container
-        .hero
-          .hero__container
-            +svg-waves
-            img(src=require("./img/lamp.png")).hero__lamp
-            .hero__cta
-              h2.heading-primary Email for Designers
-              p.paragraph Dynamic email tool for creators that doesn't cost a leg. Works with Sketch, Figma and XD. Easily import your content and send with your favorite API.
-              button.btn.btn--dark.btn--cta Start Free Trial
-            .hero__sun
-              img(src=require("./img/sun.png")).sun
-            +svg-planes
+      .hero
+        .hero__container
+          +svg-waves
+          img(src=require("./img/lamp.png"), alt="lamp").hero__lamp
+          .hero__cta
+            h1.heading-primary Email for Designers
+            p.paragraph Dynamic email tool for creators that doesn't cost a leg. Works with Sketch, Figma and XD. Easily import your content and send with your favorite API.
+            button.btn.btn--dark.btn--cta Start Free Trial
+          .hero__sun
+            img(src=require("./img/sun.png"), alt="sun").sun
+          +svg-planes
+
+      section.news
+        .news__container
+          figure.news__large-plane
+            img(src=require("./img/large-plane.png"), alt="large plane")
+          figure.news__luggage
+            img(src=require("./img/luggage.png"), alt="luggage")
+          article.news__article.news__article-1
+            h2.heading-secondary Newsletter in minutes
+            p.paragraph Emails are traditionally painfully slow to work with. We've made a drag and drop tool that automatically fetches data and easily copy or send HTML using your favorite API
+          +svg-stairs
+          article.news__article.news__article-2
+            h2.heading-secondary Works with Sketch, Figma and XD
+            p.paragraph Ever wanted to export your designs directly from your favorite design tool to your Email service? Now you can. From layers to HTML, to people's inbox.
+          .news__fly-container
+            +svg-fly
+          article.news__article.news__article-3
+            h2.heading-secondary So affordable. Small teams OK
+            p.paragraph Some email services cost hundreds or thousands to send to a not-so-large audience. We&rsquo;ll make sure you can stop worrying bout costs and more about sending your beautiful content!
+          figure.news__furniture
+            img(src=require("./img/furniture.png"), alt="furniture scene")
 

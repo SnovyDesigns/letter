@@ -43,4 +43,6 @@ img {
   max-width: $container-width;
   background: linear-gradient(to left, $color-primary-light, $color-primary);
   margin: 0 auto;
+  border-left: 1px solid $color-primary-dark;
+  border-right: 1px solid $color-primary-dark;
 }
