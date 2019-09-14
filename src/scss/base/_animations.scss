@@ -1,0 +1,9 @@
+@keyframes fly_right {
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) translateX(-20rem) translateZ(-3rem) scale(2);
+  }
+}

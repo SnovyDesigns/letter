@@ -69,7 +69,6 @@ $unit: rem !default;
 
 // Generate li items
 @mixin flex-center {
-  display: flex;
   justify-content: center;
   align-items: center;
 }

@@ -18,6 +18,11 @@ body {
 
 .heading-primary {
   font-size: $font-size-heading-primary;
+
+  @include respond-below(768px) {
+    font-size: $font-size-heading-primary--mobile;
+    text-align: center;
+  }
 }
 
 .heading-secondary {
@@ -29,4 +34,8 @@ body {
   color: $color-dark;
   margin-top: 5rem;
   line-height: $line-height-paragraph;
+
+  @include respond-below(768px) {
+    @include max-w(28);
+  }
 }

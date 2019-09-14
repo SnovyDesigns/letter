@@ -10,6 +10,13 @@
       'lamp title sun sun'
       'lamp title sun sun';
     border-bottom: 1px solid $color-primary-dark;
+
+    @include respond-below(768px) {
+      grid-template: 1fr / 1fr;
+      grid-template-areas:
+        'title'
+        'sun';
+    }
   }
 
   #wave1,
@@ -34,6 +41,10 @@
     grid-area: lamp;
     height: auto;
     @include absolute(bottom -30rem);
+
+    @include respond-below(960px) {
+      display: none;
+    }
   }
 
   &__cta {
@@ -41,26 +52,47 @@
     margin-bottom: 2rem;
     @include ja-self(end, center);
     padding-left: 2rem;
-  }
 
-  &__sun,
-  #planes {
-    @include ja-self(start, end);
+    @include respond-below(768px) {
+      @include ja-self(center, end);
+      margin-top: 4rem;
+    }
   }
 
   &__sun {
     grid-area: sun;
+    @include ja-self(start, end);
+
+    @include respond-below(768px) {
+      justify-self: center;
+    }
 
     img {
       @include min-w(20);
       @include max-w(40);
       width: 100%;
+
+      @include respond-below(768px) {
+        @include max-w(60);
+      }
     }
   }
 
   #planes {
     width: 100%;
     grid-area: sun;
+    @include ja-self(end);
+
+    @include respond-below(768px) {
+      display: none;
+    }
+  }
+
+  .fly_right {
+    opacity: 0;
+    transform-origin: center center 0px;
+    transform: translate(-50rem, 30rem);
+    animation: fly_right 2s ease-out 0.8s 1 forwards;
   }
 }
 
@@ -70,6 +102,7 @@
   background-repeat: no-repeat;
   background-position: 35% 0;
   background-size: cover;
+  overflow: hidden;
 
   &__container {
     display: grid;
@@ -146,6 +179,80 @@
       grid-column: 3 / 4;
       grid-row: 5 / 7;
       @include ja-self(center);
+    }
+  }
+
+  @include respond-below(768px) {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 2rem;
+    }
+
+    &__large-plane {
+      display: none;
+    }
+
+    &__luggage {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    &__fly-container {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      width: 60rem;
+      @include ja-self(center);
+
+      svg {
+        height: 50rem;
+        @include max-w(60);
+      }
+    }
+
+    &__stairs {
+      display: none;
+    }
+
+    &__article-1 {
+      grid-column: 2;
+      grid-row: 3;
+      margin-top: 0;
+    }
+
+    &__article-2 {
+      grid-column: 1;
+    }
+
+    &__article-3 {
+      grid-column: 1;
+    }
+
+    &__furniture {
+      grid-column: 2;
+    }
+  }
+
+  @include respond-below(420px) {
+    background-position: center;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      * {
+        @include flex-center;
+      }
+    }
+
+    &__luggage {
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+    }
+
+    &__fly-container {
+      svg {
+        height: 30rem;
+      }
     }
   }
 }

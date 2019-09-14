@@ -3,7 +3,6 @@
 // ---------------------
 
 @import 'abstracts/variables';
-@import 'abstracts/extends';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/media-queries-mixins';
@@ -16,6 +15,7 @@
 
 @import 'base/base';
 @import 'base/typography';
+@import 'base/animations';
 
 // ----------------------------------------------
 

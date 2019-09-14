@@ -31,6 +31,9 @@ $font-size-logo: 3rem;
 $font-size-heading-primary: 6rem;
 $font-size-heading-tertiary: 3rem;
 
+$font-size-heading-primary--mobile: 4rem;
+$font-size-heading-tertiary--mobile: 3rem;
+
 // ----------------------------------------------
 
 // ***** LINE HEIGHTS *****
@@ -40,5 +43,6 @@ $line-height-heading: 1.16;
 // ----------------------------------------------
 
 // ***** MEASURES *****
-$nav-links-margin: 4.7rem;
+$nav-links-margin-v: 4.7rem;
+$nav-links-margin-h: 4.5rem;
 $container-width: 144rem;
