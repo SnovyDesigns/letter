@@ -8,6 +8,10 @@
   cursor: pointer;
   @include trans(0.8, $easing: cubic-bezier(0.2, 0.8, 0.2, 1));
 
+  @include respond-below(md) {
+    width: 100%;
+  }
+
   &:focus,
   &:hover {
     transform: translateY(-3px);
@@ -23,9 +27,8 @@
   &--cta {
     @include absolute(bottom -2.3rem);
 
-    @include respond-below(768px) {
+    @include respond-below(md) {
       position: relative;
-      width: 100%;
       margin-top: 4rem;
     }
   }

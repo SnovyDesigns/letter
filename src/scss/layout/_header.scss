@@ -5,7 +5,7 @@
   font-weight: $font-weight-bold;
   font-size: $font-size-medium;
 
-  @include respond-below(768px) {
+  @include respond-below(md) {
     grid-template-columns: 1fr;
     padding: 4.5rem;
   }
@@ -34,7 +34,7 @@
     justify-content: flex-end;
     opacity: 0.7;
 
-    @include respond-below(768px) {
+    @include respond-below(md) {
       display: none;
     }
   }

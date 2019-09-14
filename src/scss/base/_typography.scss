@@ -10,7 +10,8 @@ body {
 }
 
 .heading-primary,
-.heading-secondary {
+.heading-secondary,
+.heading-tertiary {
   font-weight: $font-weight-bold;
   margin: 0;
   line-height: $line-height-heading;
@@ -19,14 +20,26 @@ body {
 .heading-primary {
   font-size: $font-size-heading-primary;
 
-  @include respond-below(768px) {
+  @include respond-below(md) {
     font-size: $font-size-heading-primary--mobile;
     text-align: center;
   }
 }
 
 .heading-secondary {
+  font-size: $font-size-heading-secondary;
+
+  @include respond-below(md) {
+    font-size: $font-size-heading-secondary--mobile;
+  }
+}
+
+.heading-tertiary {
   font-size: $font-size-heading-tertiary;
+
+  @include respond-below(md) {
+    font-size: $font-size-heading-tertiary--mobile;
+  }
 }
 
 .paragraph {
@@ -35,7 +48,7 @@ body {
   margin-top: 5rem;
   line-height: $line-height-paragraph;
 
-  @include respond-below(768px) {
+  @include respond-below(md) {
     @include max-w(28);
   }
 }
