@@ -1,6 +1,9 @@
 import { TimelineMax } from 'gsap';
-import drawHand from './drawHand/drawHand';
+import { sun, wavesTL } from './homePage/homePage';
 
 // Master timeline
 const master = new TimelineMax();
-master.add(drawHand());
+master
+  .add('start')
+  .add(wavesTL)
+  .add(sun(), 'start+=1');

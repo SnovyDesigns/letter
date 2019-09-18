@@ -56,8 +56,4 @@ body {
   color: $color-dark;
   margin-top: 5rem;
   line-height: $line-height-paragraph;
-
-  @include respond-below(md) {
-    @include max-w(28);
-  }
 }

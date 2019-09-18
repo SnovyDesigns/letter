@@ -3,6 +3,11 @@ include ./includes/main
 
 //- -----------------------------------
 
+//- DATA
+- const updates = require("./js/data/updates.js");
+
+//- -----------------------------------
+
 doctype html
 html(lang="en")
   head
@@ -13,45 +18,28 @@ html(lang="en")
     meta(name="description", content="")
   body
     .container
+      //- Header with logo and navigation
       +header
+
+      .updates  
+        aside.updates__aside
+          .hand
+            //- Hand SVG
+            +svg-hand
+            //- Line group
+            +svg-line
       
-      .hero
-        .hero__container
-          +svg-waves
-          .hero__lamp
-          .hero__cta
-            h1.heading-primary Email for Designers
-            p.paragraph Dynamic email tool for creators that doesn't cost a leg. Works with Sketch, Figma and XD. Easily import your content and send with your favorite API.
-            button.btn.btn--dark.btn--cta Start Free Trial
-          .hero__sun
-          +svg-planes
-
-      section.news
-        .news__container
-          .news__large-plane
-          .news__luggage
-          article.news__article.news__article-1
-            h3.heading-tertiary Newsletter in minutes
-            p.paragraph Emails are traditionally painfully slow to work with. We've made a drag and drop tool that automatically fetches data and easily copy or send HTML using your favorite API
-          +svg-stairs
-          article.news__article.news__article-2
-            h3.heading-tertiary Works with Sketch, Figma and XD
-            p.paragraph Ever wanted to export your designs directly from your favorite design tool to your Email service? Now you can. From layers to HTML, to people's inbox.
-          .news__fly-container
-            +svg-fly
-          article.news__article.news__article-3
-            h3.heading-tertiary So affordable. Small teams OK
-            p.paragraph Some email services cost hundreds or thousands to send to a not-so-large audience. We&rsquo;ll make sure you can stop worrying bout costs and more about sending your beautiful content!
-          .news__furniture
-
-      section.trial
-        .trial__climbing
-        .trial__cta
-          h2.heading-secondary Start free trial
-          p.paragraph 
-            | So affordable you won’t believe it.
-            br
-            | Cancel anytime.
-          button.btn.btn--dark Let me in!
+        //- Main content
+        main.updates__main
+          .updates__input
+            .updates__input__header.u-text-center
+              h1.heading-primary.heading-primary--brown.u-margin-top-big Updates
+              h2.heading-small.u-margin-top-small Stay in the know
+            form(method="POST").flex-form
+              input.flex-form__input(type='search' placeholder='Be the first to know')
+              input.flex-form__submit(type='submit' value='Submit')
+          .updates__articles
+            for update in updates
+              +update(update)
       
       +footer

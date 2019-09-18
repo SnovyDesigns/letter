@@ -2,7 +2,6 @@
 .hero {
   &__container {
     position: relative;
-    @include min-h(55);
     display: grid;
 
     grid-template: repeat(2, minmax(0px, auto)) / repeat(4, 1fr);
@@ -12,10 +11,12 @@
     border-bottom: 1px solid $color-primary-dark;
 
     @include respond-below(md) {
-      grid-template: 1fr / 1fr;
-      grid-template-areas:
-        'title'
-        'sun';
+      grid-template-columns: 1fr;
+      grid-template-areas: 'title';
+
+      & > * {
+        grid-area: title;
+      }
     }
   }
 
@@ -23,6 +24,7 @@
   #wave3,
   #wave5 {
     opacity: 0.8;
+    visibility: hidden;
   }
 
   #waves,
@@ -35,6 +37,10 @@
     width: 100%;
     grid-column: 1 / -1;
     grid-row: 2;
+
+    @include respond-below(md) {
+      grid-row: 1;
+    }
   }
 
   &__lamp {
@@ -60,8 +66,16 @@
     padding-left: 2rem;
 
     @include respond-below(md) {
-      @include ja-self(center, end);
-      margin-top: 4rem;
+      @include ja-self(center, top);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      @include max-w(80%);
+      z-index: 10;
+
+      .paragraph {
+        padding: 0 2rem;
+      }
     }
   }
 
@@ -73,13 +87,12 @@
     background: iurl('sun@1x.png') no-repeat bottom/contain;
     grid-area: sun;
     @include ja-self(start, end);
+    opacity: 0;
+    transform: scale(0);
 
     @include respond-below(md) {
-      justify-self: center;
-    }
-
-    @include respond-below(md) {
-      @include max-w(60);
+      @include ja-self(center, end);
+      @include max-w(75%);
     }
 
     @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
@@ -92,6 +105,7 @@
     width: 100%;
     grid-area: sun;
     @include ja-self(end);
+    z-index: 2;
 
     @include respond-below(md) {
       display: none;
@@ -212,12 +226,12 @@
   @include respond-below(md) {
     &__container {
       grid-template-columns: repeat(2, 1fr);
-      margin: 0 2rem;
+      margin: 0 4rem;
     }
 
     &__luggage {
       grid-column: 1 / -1;
-      grid-row: 1 / 2;
+      grid-row: 1;
     }
 
     &__fly-container {
@@ -263,14 +277,19 @@
       display: flex;
       flex-direction: column;
 
-      * {
+      > * {
         @include flex-center;
+        @include ja-self(center);
+        text-align: center;
       }
     }
 
     &__luggage {
-      margin-top: 15rem;
-      margin-bottom: 5rem;
+      display: none;
+    }
+
+    &__article {
+      margin: 5rem 0;
     }
 
     &__fly-container {

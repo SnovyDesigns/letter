@@ -7,8 +7,30 @@
     'info fixes';
   @include min-h(52.4);
 
+  @include respond-below(lg) {
+    @include min-h(100%);
+    margin-bottom: 5rem;
+  }
+
+  @include respond-below(md) {
+    grid-template: auto / minmax(20rem, 1fr);
+    grid-template-areas:
+      'version '
+      'info'
+      'date'
+      'fixes';
+
+    .btn-link {
+      display: block;
+    }
+  }
+
   &:first-child {
     margin-top: 19rem;
+
+    @include respond-below(lg) {
+      margin-top: 0;
+    }
   }
 
   &__version {
@@ -27,6 +49,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond-below(md) {
+      margin-top: 4rem;
+    }
   }
 
   &__date {

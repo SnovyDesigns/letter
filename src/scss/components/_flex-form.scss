@@ -2,6 +2,10 @@
   display: flex;
   margin: 0 auto;
 
+  @include respond-below(md) {
+    flex-direction: column;
+  }
+
   & > * {
     border: 0;
     background: $color-white;
@@ -33,5 +37,11 @@
     padding: 0 3rem;
     background: $color-dark;
     color: $color-white;
+
+    @include respond-below(md) {
+      width: 75%;
+      margin-top: 2rem;
+      align-self: center;
+    }
   }
 }

@@ -5,8 +5,17 @@
     'draw update2';
   grid-template-columns: 20% 1fr;
 
+  @include respond-below(lg) {
+    grid-template-columns: 1fr;
+    margin: 0 4rem;
+  }
+
   &__aside {
     grid-area: draw;
+
+    @include respond-below(lg) {
+      display: none;
+    }
   }
 
   &__input {
@@ -15,10 +24,24 @@
     flex-direction: column;
     @include ja-content(space-between, center);
     height: 30rem;
+
+    @include respond-below(lg) {
+      margin-bottom: 8rem;
+    }
   }
 
   &__articles {
     grid-area: update2;
     margin: 8rem 2rem 2rem;
+
+    @include respond-below(lg) {
+      margin: 0;
+    }
+  }
+
+  @include respond-below(md) {
+    &__main {
+      margin: 0 auto;
+    }
   }
 }

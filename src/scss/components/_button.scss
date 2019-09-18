@@ -7,9 +7,10 @@
   text-align: center;
   cursor: pointer;
   @include trans(0.8, $easing: cubic-bezier(0.2, 0.8, 0.2, 1));
+  z-index: 5;
 
   @include respond-below(md) {
-    width: 100%;
+    width: 80%;
   }
 
   &:focus,
