@@ -1,0 +1,13 @@
+mixin update(data)
+  .update
+    h2.heading-primary.heading-primary--brown.update__version Letter #{data.version}
+    p.paragraph.update__paragraph
+      b= data.paragraphBold
+      | &nbsp;- #{data.paragraph}
+      a(href='').btn-link.u-margin-top-medium Click here to download
+    .update__head-date
+      h3.heading-small Fixes
+      span.update__date 21 Feb 2019
+    ul.update__list
+      for fix in data.fixes
+        li.update__item - #{fix}

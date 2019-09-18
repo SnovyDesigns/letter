@@ -1,0 +1,52 @@
+.update {
+  display: grid;
+  grid-template: 8rem auto / repeat(2, minmax(30rem, 43rem));
+  grid-column-gap: 6rem;
+  grid-template-areas:
+    'version date'
+    'info fixes';
+  @include min-h(52.4);
+
+  &:first-child {
+    margin-top: 19rem;
+  }
+
+  &__version {
+    grid-area: version;
+    align-self: center;
+    line-height: 1;
+  }
+
+  &__paragraph {
+    grid-area: info;
+    margin-top: 3rem;
+  }
+
+  &__head-date {
+    grid-area: date;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__date {
+    font-family: $font-family-secondary;
+    font-size: $font-size-x-small;
+    font-weight: $font-weight-medium;
+    color: $color-white;
+    background: $color-brown-light;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__list {
+    grid-area: fixes;
+    font-size: $font-size-medium;
+    margin-top: 2.5rem;
+  }
+
+  &__item {
+    margin: 0.5rem;
+    line-height: 1.5;
+  }
+}

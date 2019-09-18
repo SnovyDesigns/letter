@@ -79,6 +79,12 @@ $unit: rem !default;
   align-self: $align-pos;
 }
 
+// Justify-content & align-content
+@mixin ja-content($justify-pos, $align-pos: $justify-pos) {
+  justify-content: $justify-pos;
+  align-content: $align-pos;
+}
+
 // Minimum width
 @mixin min-w($width) {
   @if unitless($width) {

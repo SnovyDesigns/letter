@@ -1,1 +1,2 @@
-import './scripts';
+// GSAP Animations
+import './animations';

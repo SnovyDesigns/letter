@@ -11,6 +11,7 @@ $color-black: #000000;
 $color-white: #ffffff;
 
 $color-brown: #6a4a39;
+$color-brown-light: #b39889;
 
 $color-dark: #333333;
 
@@ -18,16 +19,26 @@ $color-light-grey: #fffcfb;
 
 // ----------------------------------------------
 
+// ***** FONTS *****
+$font-family-primary: 'Alegreya', serif;
+$font-family-secondary: 'Roboto', sans-serif;
+
+// ----------------------------------------------
+
 // ***** FONT WEIGHTS *****
 $font-weight-regular: 400;
+$font-weight-medium: 500;
 $font-weight-bold: 700;
 
 // ----------------------------------------------
 
 // ***** FONT SIZES *****
-$font-size-base: 1.6rem;
-$font-size-medium: 2rem;
+$font-size-x-small: 1.2rem;
 $font-size-small: 1.3rem;
+
+$font-size-base: 1.6rem;
+
+$font-size-medium: 2rem;
 
 $font-size-logo: 3rem;
 

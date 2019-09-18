@@ -1,0 +1,37 @@
+.flex-form {
+  display: flex;
+  margin: 0 auto;
+
+  & > * {
+    border: 0;
+    background: $color-white;
+    font-size: 1rem;
+    border-radius: 0;
+    outline: 0;
+    @include max-h(5.5);
+  }
+
+  &__input,
+  &__submit {
+    font-size: $font-size-medium;
+    font-family: inherit;
+    height: 5.5rem;
+    line-height: 5.5rem;
+  }
+
+  &__input {
+    @include min-w(28);
+    flex-basis: 100%;
+    padding: 0 5px;
+    border: 1px solid $color-brown-light;
+    box-sizing: border-box;
+    color: $color-brown;
+    align-self: center;
+  }
+
+  &__submit {
+    padding: 0 3rem;
+    background: $color-dark;
+    color: $color-white;
+  }
+}

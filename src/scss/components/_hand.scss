@@ -1,0 +1,29 @@
+// Aside with hand svg
+.hand {
+  display: grid;
+  justify-content: center;
+  grid-template: 30rem 1fr / 40rem;
+
+  &__svg {
+    justify-self: end;
+    margin-top: 2.6rem;
+    margin-right: 3rem;
+    @include max-w(17);
+    width: 100%;
+  }
+
+  &__line {
+    justify-self: center;
+    @include max-w(7.8);
+    @include size(100%, 127.2);
+  }
+
+  &__draw {
+    visibility: hidden;
+  }
+
+  &__circle1,
+  &__circle2 {
+    opacity: 0;
+  }
+}

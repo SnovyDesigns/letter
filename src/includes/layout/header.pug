@@ -1,0 +1,13 @@
+include ../inline-svg/svg-logo
+
+mixin header
+  header.header
+    .header__logo
+      +svg-logo
+      span.header__letter Letter
+    nav
+      ul.header__nav-list
+        - const navLinks = ['Updates', 'Pricing', 'Log in', 'Free Trial'];
+        for item, index in navLinks
+          li.header__nav-item
+            a.header__nav-link(class=`${(index+1) === navLinks.length ? "header__nav-link--styled" : "" }`, href="#")= item

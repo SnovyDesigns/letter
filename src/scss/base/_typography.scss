@@ -1,10 +1,11 @@
-// BASE FONT IMPORT
+// FONTS IMPORT
 @import url('https://fonts.googleapis.com/css?family=Alegreya:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
 
 // ----------------------------------------------
 
 body {
-  font-family: 'Alegreya', serif;
+  font-family: $font-family-primary;
   font-weight: $font-weight-regular;
   font-size: $font-size-base;
 }
@@ -24,6 +25,10 @@ body {
     font-size: $font-size-heading-primary--mobile;
     text-align: center;
   }
+
+  &--brown {
+    color: $color-brown;
+  }
 }
 
 .heading-secondary {
@@ -40,6 +45,10 @@ body {
   @include respond-below(md) {
     font-size: $font-size-heading-tertiary--mobile;
   }
+}
+
+.heading-small {
+  font-size: $font-size-medium;
 }
 
 .paragraph {

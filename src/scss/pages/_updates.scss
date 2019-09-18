@@ -1,0 +1,24 @@
+.updates {
+  display: grid;
+  grid-template-areas:
+    'draw update'
+    'draw update2';
+  grid-template-columns: 20% 1fr;
+
+  &__aside {
+    grid-area: draw;
+  }
+
+  &__input {
+    grid-area: update;
+    display: flex;
+    flex-direction: column;
+    @include ja-content(space-between, center);
+    height: 30rem;
+  }
+
+  &__articles {
+    grid-area: update2;
+    margin: 8rem 2rem 2rem;
+  }
+}
