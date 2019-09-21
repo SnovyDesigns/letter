@@ -8,6 +8,7 @@
   cursor: pointer;
   @include trans(0.8, $easing: cubic-bezier(0.2, 0.8, 0.2, 1));
   z-index: 5;
+  display: inline-block;
 
   @include respond-below(md) {
     width: 80%;
@@ -41,4 +42,10 @@
   font-size: $font-size-medium;
   text-decoration-line: underline;
   color: $color-primary-dark;
+  @include trans;
+
+  &:focus,
+  &:hover {
+    color: $color-brown;
+  }
 }

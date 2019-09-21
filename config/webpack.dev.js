@@ -6,7 +6,10 @@ const sortCSSmq = require('sort-css-media-queries');
 
 module.exports = {
   entry: {
-    main: ['./index.js']
+    main: './index.js',
+    homePageAnimations: './src/js/animations/masterHomePage.js',
+    updatesPageAnimations: './src/js/animations/masterUpdatesPage.js',
+    pricingPageAnimations: './src/js/animations/masterPricingPage.js'
   },
   output: {
     filename: '[name]-bundle.js',
@@ -17,7 +20,7 @@ module.exports = {
   devServer: {
     contentBase: 'dist',
     noInfo: true,
-    clientLogLevel: 'silent',
+    clientLogLevel: 'silent'
   },
   module: {
     rules: [
@@ -34,14 +37,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader'},
+          { loader: 'style-loader' },
           { loader: 'css-loader', options: { sourceMap: true } }
         ]
       },
       {
         test: /\.(scss|sass)$/,
         use: [
-          { loader: 'style-loader'},
+          { loader: 'style-loader' },
           { loader: 'css-loader', options: { sourceMap: true } },
           {
             loader: 'postcss-loader',
@@ -82,7 +85,18 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['**/*']
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.pug',
+      chunks: ['main', 'homePageAnimations']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/updates.pug',
+      filename: 'updates.html',
+      chunks: ['main', 'updatesPageAnimations']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pricing.pug',
+      filename: 'pricing.html',
+      chunks: ['main', 'pricingPageAnimations']
     }),
     new BrowserSyncPlugin({
       host: 'localhost',

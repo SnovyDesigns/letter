@@ -18,6 +18,14 @@
     }
   }
 
+  &__main {
+    margin-left: 3.5rem;
+
+    @include respond-below(lg) {
+      margin: 0 auto;
+    }
+  }
+
   &__input {
     grid-area: update;
     display: flex;
@@ -36,12 +44,6 @@
 
     @include respond-below(lg) {
       margin: 0;
-    }
-  }
-
-  @include respond-below(md) {
-    &__main {
-      margin: 0 auto;
     }
   }
 }

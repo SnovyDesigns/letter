@@ -41,6 +41,10 @@
 
   &__nav-item {
     margin: $nav-links-margin-v $nav-links-margin-h;
+
+    @include respond-below(lg) {
+      margin: $nav-links-margin-v $nav-links-margin-h-mobile;
+    }
   }
 
   &__nav-link {

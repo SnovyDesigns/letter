@@ -1,0 +1,35 @@
+//- PUG INCLUDES
+include ./includes/main
+
+//- -----------------------------------
+
+//- DATA
+- const prices = require("./js/data/prices.js");
+
+//- -----------------------------------
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Letter
+    meta(name="description", content="")
+  body
+    .container
+      //- Header with logo and navigation
+      +header
+
+      .pricing 
+        .pricing__header 
+          h1.heading-primary.heading-primary--brown.u-margin-top-big Our plans
+          h2.heading-small.u-margin-top-small Choose the best option for you
+        main.pricing__main
+          for price, index in prices
+            +price-card(price, index)
+          .pricing__girl
+            img(src=require("./img/girl@1x.png"))
+
+      
+      +footer

@@ -3,6 +3,8 @@ $color-primary-light: #ffe1d1;
 $color-primary: #ffdbca;
 $color-primary-dark: #ff8989;
 
+$color-primary-icon-bg: #ffcecb;
+
 $color-primary-styled: #ff7676;
 $color-primary-styled-border: #f8d1be;
 
@@ -26,6 +28,7 @@ $font-family-secondary: 'Roboto', sans-serif;
 // ----------------------------------------------
 
 // ***** FONT WEIGHTS *****
+$font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
@@ -61,4 +64,5 @@ $line-height-heading: 1.16;
 // ***** MEASURES *****
 $nav-links-margin-v: 4.7rem;
 $nav-links-margin-h: 4.5rem;
+$nav-links-margin-h-mobile: 2.5rem;
 $container-width: 144rem;

@@ -1,2 +1,0 @@
-// GSAP Animations
-import './animations';

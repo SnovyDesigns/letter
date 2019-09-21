@@ -1,0 +1,48 @@
+.pricing {
+  text-align: center;
+
+  &__header {
+    margin-bottom: 3rem;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr 30rem 35rem 30rem 1fr;
+    grid-template-areas: '. left girl right .';
+    margin-top: 26rem;
+  }
+
+  .price-card {
+    &--1,
+    &--2 {
+      margin-top: -23rem;
+    }
+    &--1 {
+      grid-area: left;
+      justify-self: end;
+    }
+
+    &--2 {
+      grid-area: right;
+    }
+  }
+
+  &__girl {
+    grid-area: girl;
+    margin-bottom: 5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      @include size(70, 1px);
+      background: $color-primary-dark;
+      @include absolute(bottom -1px left 50%);
+      transform: translateX(-50%);
+    }
+
+    img {
+      display: block;
+    }
+  }
+}

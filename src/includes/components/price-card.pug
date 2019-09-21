@@ -1,0 +1,30 @@
+include ../inline-svg/svg-basic
+include ../inline-svg/svg-premium
+
+mixin price-card(data, index)
+  .price-card(class=`price-card--${index+1}`)
+    .price-card__face.price-card__face--1
+      .price-card__content
+        case data.icon
+          when 'svg-basic'
+            +svg-basic
+          when 'svg-premium'
+            +svg-premium
+        h3.price-card__header= data.type 
+        .price-card__price-container
+          span.price-card__currency= data.currency
+          span.price-card__price= data.price
+    .price-card__face.price-card__face--2
+      .price-card__content
+        ul.price-card__list
+          for feature in data.features
+            li.price-card__item=feature
+        a(href="#").btn.btn--dark Buy me! 
+
+
+
+//- case data.icon
+//-   when 'svg-basic'
+//-     +svg-basic
+//-   when 'svg-premium'
+//-     +svg-premium

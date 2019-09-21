@@ -2,12 +2,16 @@ include ../inline-svg/svg-logo
 
 mixin header
   header.header
-    .header__logo
+    a(href="index.html").header__logo
       +svg-logo
       span.header__letter Letter
     nav
       ul.header__nav-list
-        - const navLinks = ['Updates', 'Pricing', 'Log in', 'Free Trial'];
-        for item, index in navLinks
-          li.header__nav-item
-            a.header__nav-link(class=`${(index+1) === navLinks.length ? "header__nav-link--styled" : "" }`, href="#")= item
+        li.header__nav-item
+          a(href="updates.html").header__nav-link Updates
+        li.header__nav-item
+          a(href="pricing.html").header__nav-link Pricing
+        li.header__nav-item
+          a(href="#logIn").header__nav-link Log in
+        li.header__nav-item
+          a(href="#trial").header__nav-link.header__nav-link--styled Free Trial

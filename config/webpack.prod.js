@@ -10,7 +10,10 @@ const sortCSSmq = require('sort-css-media-queries');
 
 module.exports = {
   entry: {
-    main: ['./index.js']
+    main: './index.js',
+    homePageAnimations: './src/js/animations/masterHomePage.js',
+    updatesPageAnimations: './src/js/animations/masterUpdatesPage.js',
+    pricingPageAnimations: './src/js/animations/masterPricingPage.js'
   },
   output: {
     filename: '[name]-[contenthash]-bundle.js',
@@ -111,7 +114,18 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['**/*']
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.pug',
+      chunks: ['main', 'homePageAnimations']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/updates.pug',
+      filename: 'updates.html',
+      chunks: ['main', 'updatesPageAnimations']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/pricing.pug',
+      filename: 'pricing.html',
+      chunks: ['main', 'pricingPageAnimations']
     }),
     new CompressionPlugin({
       test: /\.(html|css|js|svg)/,

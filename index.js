@@ -10,6 +10,4 @@ import './src/scss/main.scss';
 //     JS
 // ---------------------
 
-import './src/js/main';
-
-
+// import './src/js/main';
