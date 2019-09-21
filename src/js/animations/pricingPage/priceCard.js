@@ -22,22 +22,18 @@ const priceCards = document.querySelectorAll('.price-card'),
 // ------------------------------------------
 
 // Setting elements on animation start
-TweenLite.set([priceCards, svgBasic, svgPremium], { scale: 0 });
+TweenLite.set([priceCards], { scale: 0 });
 TweenLite.set(priceCard1, { transformOrigin: '100% 50%' });
 TweenLite.set(priceCard2, { transformOrigin: '0% 50%' });
 TweenLite.set([priceCardHeader, priceCardCurrency, priceCardPrice], {
   autoAlpha: 0,
   y: 15
 });
-TweenLite.set([priceCardHeader, priceCardCurrency, priceCardPrice], {
-  autoAlpha: 0,
-  y: 15
-});
-TweenLite.set([svgBasicBG, svgPremiumBG], {
+TweenLite.set([svgBasic, svgPremium, svgBasicBG, svgPremiumBG], {
   autoAlpha: 0
 });
 TweenLite.set([svgBasicCog], {
-  transformOrigin: 'center'
+  transformOrigin: 'center center'
 });
 TweenLite.set([svgPremiumLine1, svgPremiumLine2, svgPremiumLine3], {
   width: 0
@@ -54,24 +50,28 @@ const priceCard = () => {
       0.25,
       { autoAlpha: 1, y: 0, ease: Power3.easeIn },
       0.25,
-      'card'
+      'card-=0.55'
     )
     .staggerTo(
       [svgBasic, svgPremium],
       0.25,
-      { scale: 1, ease: Power3.easeIn, clearProps: 'scale' },
+      { autoAlpha: 1, ease: Power3.easeIn },
       0.25,
-      'card'
+      'card-=0.35'
     )
     .staggerTo(
       [svgBasicBG, svgPremiumBG],
       0.25,
       { autoAlpha: 1, ease: Power3.easeIn },
       0.25,
-      'card+=.15'
+      'card-=0.3'
     )
     .add('icon')
-    .to(svgBasicCog, 8, { rotation: 360, ease: Power0.easeNone, repeat: -1 })
+    .to(svgBasicCog, 8, {
+      rotation: '+=360',
+      ease: Power0.easeNone,
+      repeat: -1
+    })
     .staggerTo(
       [svgPremiumLine1, svgPremiumLine3],
       2.5,

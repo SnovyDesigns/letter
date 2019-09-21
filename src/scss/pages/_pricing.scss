@@ -10,12 +10,29 @@
     grid-template-columns: 1fr 30rem 35rem 30rem 1fr;
     grid-template-areas: '. left girl right .';
     margin-top: 26rem;
+
+    @include respond-below(lg) {
+      margin-top: 0;
+      grid-template-columns: 1fr 30rem 6rem 30rem 1fr;
+      grid-template-areas: '. left . right .';
+    }
+
+    @include respond-below(md) {
+      display: flex;
+      flex-direction: column;
+      @include flex-center;
+    }
   }
 
   .price-card {
     &--1,
     &--2 {
       margin-top: -23rem;
+
+      @include respond-below(lg) {
+        margin-top: 0;
+        margin-bottom: 5rem;
+      }
     }
     &--1 {
       grid-area: left;
@@ -31,6 +48,10 @@
     grid-area: girl;
     margin-bottom: 5rem;
     position: relative;
+
+    @include respond-below(lg) {
+      display: none;
+    }
 
     &::after {
       content: '';

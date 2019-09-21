@@ -11,7 +11,7 @@
   display: inline-block;
 
   @include respond-below(md) {
-    width: 80%;
+    max-width: 80%;
   }
 
   &:focus,
@@ -28,6 +28,8 @@
 
   &--cta {
     @include absolute(bottom -2.3rem);
+    grid-area: title;
+    @include min-w(20rem);
 
     @include respond-below(md) {
       position: relative;

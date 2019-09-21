@@ -15,11 +15,14 @@ let draws = document.querySelectorAll('.hand__draw'),
 // ------------------------------------------
 
 TweenMax.set(draws, { visibility: 'visible' });
+TweenMax.set(handSVG, { y: 1270 });
+
+// ------------------------------------------
 
 const drawHand = () => {
   const tl = new TimelineMax();
   tl.add('start')
-    .from(handSVG, 3.5, { y: 1270, ease: Power3.easeOut }, 'start')
+    .to(handSVG, 3.5, { y: 0, ease: Power3.easeOut }, 'start')
     .fromTo(
       draws,
       3.5,

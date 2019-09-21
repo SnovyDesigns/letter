@@ -1,9 +1,14 @@
 import { TimelineMax } from 'gsap';
-import { sun, wavesTL } from './homePage/homePage';
+import waves from './homePage/waves';
+import sun from './homePage/sun';
+import planes from './homePage/planes';
+import flyRight from './homePage/flyRight';
 
 // Master timeline
-const master = new TimelineMax();
+const master = new TimelineMax({ delay: 0.5 });
 master
-  .add('start')
-  .add(wavesTL)
-  .add(sun(), 'start+=1');
+  .add('s')
+  .add(waves())
+  .add(sun(), 's+=1')
+  .add(flyRight(), 's+=1.25')
+  .add(planes(), 's+=1');

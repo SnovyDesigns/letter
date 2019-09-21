@@ -119,4 +119,37 @@
       fill: transparent;
     }
   }
+
+  @include respond-below-nohover(lg) {
+    &__face {
+      &--1,
+      &--2 {
+        transform: translateY(0);
+      }
+
+      &--1 {
+        background: $color-primary-dark;
+      }
+    }
+    &__header,
+    &__currency,
+    &__price {
+      color: $color-white;
+    }
+
+    svg {
+      path,
+      rect {
+        fill: $color-white;
+      }
+
+      path.bg {
+        fill: transparent;
+      }
+    }
+
+    .btn {
+      @include min-w(20);
+    }
+  }
 }
