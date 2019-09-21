@@ -10,10 +10,6 @@
   z-index: 5;
   display: inline-block;
 
-  @include respond-below(md) {
-    max-width: 80%;
-  }
-
   &:focus,
   &:hover {
     transform: translateY(-3px);

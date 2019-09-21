@@ -27,10 +27,28 @@
     @include min-w(28);
     flex-basis: 100%;
     padding: 0 5px;
-    border: 1px solid $color-brown-light;
+    border: 1px solid $color-primary-styled-border;
     box-sizing: border-box;
     color: $color-brown;
     align-self: center;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.1);
+      border-bottom-color: $color-primary-styled-border;
+    }
+
+    &:focus:valid {
+      border-bottom-color: $color-success;
+    }
+
+    &:focus:invalid {
+      border-bottom-color: $color-error;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-brown-light;
+    }
   }
 
   &__submit {

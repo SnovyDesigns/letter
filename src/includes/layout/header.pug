@@ -5,6 +5,17 @@ mixin header
     a(href="index.html").header__logo
       +svg-logo
       span.header__letter Letter
+    
+    .mobile-nav
+      input(type="checkbox")#mobile-nav__toggle.mobile-nav__checkbox
+      .mobile-nav__body-bg
+      label(for="mobile-nav__toggle").mobile-nav__button
+        +svg-menu
+      a(href="updates.html").mobile-nav__link.mobile-nav__link--1 Updates
+      a(href="pricing.html").mobile-nav__link.mobile-nav__link--2 Pricing
+      a(href="login.html").mobile-nav__link.mobile-nav__link--3 Log in
+
+      
     nav
       ul.header__nav-list
         li.header__nav-item
@@ -12,6 +23,6 @@ mixin header
         li.header__nav-item
           a(href="pricing.html").header__nav-link Pricing
         li.header__nav-item
-          a(href="#logIn").header__nav-link Log in
+          a(href="login.html").header__nav-link Log in
         li.header__nav-item
           a(href="#trial").header__nav-link.header__nav-link--styled Free Trial

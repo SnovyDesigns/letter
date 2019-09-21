@@ -36,7 +36,7 @@ html(lang="en")
               h1.heading-primary.heading-primary--brown.u-margin-top-big Updates
               h2.heading-small.u-margin-top-small Stay in the know
             form(method="POST").flex-form
-              input.flex-form__input(type='search' placeholder='Be the first to know')
+              input.flex-form__input(type='email', placeholder='Be the first to know', required)
               input.flex-form__submit(type='submit' value='Submit')
           .updates__articles
             for update in updates
