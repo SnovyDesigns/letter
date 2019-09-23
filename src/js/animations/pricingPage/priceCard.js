@@ -67,7 +67,7 @@ const priceCard = () => {
       'card-=0.3'
     )
     .add('icon')
-    .to(svgBasicCog, 8, {
+    .to(svgBasicCog, 12, {
       rotation: '+=360',
       ease: Power0.easeNone,
       repeat: -1

@@ -1,0 +1,123 @@
+.authentication {
+  text-align: center;
+  padding-bottom: 5rem;
+
+  &__header {
+    margin-bottom: 5rem;
+  }
+
+  &__wrapper {
+    width: 72rem;
+    display: grid;
+    grid-template: 48rem auto / 1fr;
+    grid-template-areas: '';
+    margin: 0 auto;
+    background: $color-white;
+
+    @include respond-below(md) {
+      width: 90%;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      @include flex-center;
+    }
+  }
+
+  &__box,
+  &__signup,
+  &__login {
+    padding: 4rem 2rem;
+    grid-column: 1;
+    grid-row: 1;
+    border-bottom: 0;
+  }
+
+  &__box {
+    @include size(32rem, 100%);
+    background: $color-primary-dark;
+    color: $color-white;
+    display: flex;
+    @include flex-center;
+    z-index: 3;
+
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+
+  &__text {
+    width: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__trigger {
+    margin: 4rem auto 0;
+    width: 20rem;
+  }
+
+  &__signup,
+  &__login {
+    width: 40rem;
+    background: $color-white;
+
+    @include respond-below(md) {
+      width: 100%;
+      @include min-w(30);
+      @include max-w(50);
+    }
+  }
+
+  &__signup {
+    margin-left: auto;
+
+    @include respond-below(md) {
+      margin-left: 0;
+      order: 2;
+    }
+  }
+
+  &__login {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(16rem);
+
+    @include respond-below(md) {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 3rem;
+    color: $color-primary-dark;
+  }
+
+  .flex-form {
+    flex-direction: column;
+    align-items: center;
+
+    &__input {
+      margin-bottom: 2rem;
+    }
+
+    &__submit {
+      width: 25rem;
+      margin-top: 3rem;
+      @include brr(0.5);
+    }
+  }
+
+  &__svg {
+    grid-row: 2;
+    grid-column: 1;
+    overflow: hidden;
+
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+}

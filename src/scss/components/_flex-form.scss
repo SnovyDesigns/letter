@@ -55,11 +55,27 @@
     padding: 0 3rem;
     background: $color-dark;
     color: $color-white;
+    @include trans($props: background);
+
+    &:focus,
+    &:hover {
+      background: $color-brown;
+    }
 
     @include respond-below(md) {
       width: 75%;
       margin-top: 2rem;
       align-self: center;
+    }
+  }
+
+  &__link {
+    color: $color-brown-light;
+    font-size: $font-size-small;
+    @include trans($props: color);
+
+    &:hover {
+      color: $color-brown;
     }
   }
 }

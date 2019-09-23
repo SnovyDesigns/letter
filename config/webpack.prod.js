@@ -13,7 +13,9 @@ module.exports = {
     main: './index.js',
     homePageAnimations: './src/js/animations/masterHomePage.js',
     updatesPageAnimations: './src/js/animations/masterUpdatesPage.js',
-    pricingPageAnimations: './src/js/animations/masterPricingPage.js'
+    pricingPageAnimations: './src/js/animations/masterPricingPage.js',
+    authenticationPageAnimations:
+      './src/js/animations/masterAuthenticationPage.js'
   },
   output: {
     filename: '[name]-[contenthash]-bundle.js',
@@ -126,6 +128,11 @@ module.exports = {
       template: './src/pricing.pug',
       filename: 'pricing.html',
       chunks: ['main', 'pricingPageAnimations']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/authentication.pug',
+      filename: 'authentication.html',
+      chunks: ['main', 'authenticationPageAnimations']
     }),
     new CompressionPlugin({
       test: /\.(html|css|js|svg)/,

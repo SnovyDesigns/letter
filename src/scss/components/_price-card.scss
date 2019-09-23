@@ -89,6 +89,10 @@
     path {
       @include trans;
     }
+
+    circle {
+      stroke: $color-primary-icon-bg;
+    }
   }
 
   // Functionality
@@ -118,6 +122,10 @@
     path.bg {
       fill: transparent;
     }
+
+    circle {
+      stroke: $color-primary-dark;
+    }
   }
 
   @include respond-below-nohover(lg) {
@@ -145,6 +153,10 @@
 
       path.bg {
         fill: transparent;
+      }
+
+      circle {
+        stroke: $color-primary-dark;
       }
     }
 

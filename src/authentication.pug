@@ -1,0 +1,50 @@
+//- PUG INCLUDES
+include ./includes/main
+
+//- -----------------------------------
+
+//- DATA
+- const updates = require("./js/data/updates.js");
+
+//- -----------------------------------
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Letter
+    meta(name="description", content="")
+  body
+    .container
+      //- Header with logo and navigation
+      +header
+
+      .authentication 
+        .authentication__header 
+          h1.heading-primary.heading-primary--brown.u-margin-top-big Join our community
+          h2.heading-small.u-margin-top-small You are always welcome
+        .authentication__wrapper
+          .authentication__box
+            .authentication__text
+              h2.heading-tertiary.authentication__box-header Welcome Back!
+              p.paragraph.authentication__box-text To keep connected with us please login with your personal info
+              button.btn.btn--light.authentication__trigger Sign In
+          .authentication__signup
+            h2.heading-tertiary.authentication__heading Create account
+            form(method="POST").flex-form
+              input.flex-form__input(type='text', placeholder='Name', required)
+              input.flex-form__input(type='email', placeholder='Email address', required)
+              input.flex-form__input(type='password', placeholder='Password', required)
+              input.flex-form__submit(type='submit' value='Sign Up')
+          .authentication__login
+            h2.heading-tertiary.authentication__heading Sign In
+            form(method="POST").flex-form
+              input.flex-form__input(type='email', placeholder='Email address', required)
+              input.flex-form__input(type='password', placeholder='Password', required)
+              a(href="#").flex-form__link Forgot your password?
+              input.flex-form__submit(type='submit' value='Sign In')
+          +svg-auth
+      
+      +footer
