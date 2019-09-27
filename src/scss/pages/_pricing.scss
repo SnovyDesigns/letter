@@ -11,6 +11,9 @@
     grid-template-areas: '. left girl right .';
     margin-top: 26rem;
 
+    // Only for the animation
+    visibility: hidden;
+
     @include respond-below(lg) {
       margin-top: 0;
       grid-template-columns: 1fr 30rem 6rem 30rem 1fr;

@@ -13,6 +13,9 @@
   &__aside {
     grid-area: draw;
 
+    // Only for the animation
+    visibility: hidden;
+
     @include respond-below(lg) {
       display: none;
     }

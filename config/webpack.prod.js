@@ -18,7 +18,7 @@ module.exports = {
       './src/js/animations/masterAuthenticationPage.js'
   },
   output: {
-    filename: '[name]-[contenthash]-bundle.js',
+    filename: 'js/[name]-[contenthash]-bundle.js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: ''
   },
@@ -29,7 +29,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -73,7 +73,9 @@ module.exports = {
           {
             loader: MiniCSSExtractPlugin.loader
           },
-          { loader: 'css-loader' },
+          {
+            loader: 'css-loader'
+          },
           {
             loader: 'postcss-loader',
             options: {

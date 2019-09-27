@@ -1,8 +1,14 @@
-import { TimelineMax } from 'gsap';
+import { TimelineMax, TweenLite } from 'gsap';
 import girl from './pricingPage/girl';
 import priceCard from './pricingPage/priceCard';
 
-console.log(window);
+// ------------------------------------------
+
+// To disable blink on page load
+const pricingMain = document.querySelector('.pricing__main');
+TweenLite.set(pricingMain, { visibility: 'visible' });
+
+// ------------------------------------------
 
 // Master timeline
 const master = new TimelineMax({ delay: 0.5 });
