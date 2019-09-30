@@ -1,6 +1,5 @@
 import { TimelineMax, Power2 } from 'gsap';
 import TextPlugin from 'gsap/TextPlugin';
-import TweenLite from 'gsap/TweenLite';
 
 // ------------------------------------------
 
